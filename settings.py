@@ -227,6 +227,15 @@ CACHES = {
     }
 }
 
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+)
 
 SOCIAL_AUTH_STEAM_EXTRA_DATA = ['player']
-SOCIAL_AUTH_STEAM_API_KEY = 'key'
+SOCIAL_AUTH_STEAM_API_KEY = local.STEAM_API_KEY
