@@ -7,6 +7,7 @@ urlpatterns = patterns('',
     url(r'^admin/lookups/', include('ajax_select.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^logout/', 'tracker.views.logout'),
+    url('', include('social.apps.django_app.urls', namespace='social'))
 )
 
 try:
