@@ -56,6 +56,6 @@ HAS_GIANTBOMB_API_KEY = False
 # GIANTBOMB_API_KEY = 'Itsreallynicetohaveanditsfreetomakeanaccountbutnotneccessary'
 
 HAS_STEAM_API_KEY = False
-#STEAM_API_KEY = 'MY_KEY' # Grab key from here: vhttps://steamcommunity.com/dev/apikey
+#STEAM_API_KEY = 'MY_KEY' # Grab key from here: https://steamcommunity.com/dev/apikey
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
