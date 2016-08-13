@@ -115,6 +115,8 @@ MIDDLEWARE_CLASSES = (
 
 SESSION_COOKIE_NAME = 'tracker_session'
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
 ROOT_URLCONF = 'urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -230,14 +232,8 @@ CACHES = {
 SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_details',
     'social.pipeline.social_auth.social_uid',
-    'social.pipeline.social_auth.auth_allowed',
-    'social.pipeline.social_auth.social_user',
-    'social.pipeline.social_auth.associate_user',
-    'social.pipeline.social_auth.load_extra_data',
-    'social.pipeline.user.user_details',
+    'tracker.steam_social.save_uid_to_session',
 )
-
-SOCIAL_AUTH_STEAM_EXTRA_DATA = ['player']
 
 if local.HAS_STEAM_API_KEY:
     SOCIAL_AUTH_STEAM_API_KEY = local.STEAM_API_KEY
