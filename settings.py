@@ -235,5 +235,9 @@ SOCIAL_AUTH_PIPELINE = (
     'tracker.steam_social.save_uid_to_session',
 )
 
+SOCIAL_AUTH_DISCONNECT_PIPELINE = (
+    'tracker.steam_social.clear_uid',
+)
+
 if local.HAS_STEAM_API_KEY:
     SOCIAL_AUTH_STEAM_API_KEY = local.STEAM_API_KEY
